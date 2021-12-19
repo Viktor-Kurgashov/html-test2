@@ -1,0 +1,136 @@
+.stats-item_1 {
+  background-color: #137CF9;
+  background-image: url('icon1.svg');
+}
+.stats-item_2 {
+  background-color: #DA1564;
+  background-image: url('icon2.svg');
+}
+.stats-item_3 {
+  background-color: #77D44A;
+  background-image: url('icon3.svg');
+}
+.stats-item_1,
+.stats-item_2,
+.stats-item_3 {
+  font-weight: 500;
+  color: white;
+}
+.stats-item_4 {
+  font-weight: 600;
+  background-color: #FFC72C;
+  background-image: url('icon4.svg');
+}
+.stats-item_5 {
+  font-weight: 600;
+  background-color: #FFC72C;
+  background-image: url('icon5.svg');
+}
+
+
+
+
+
+.stats {
+  padding-top: 48px;
+}
+
+.stats-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  row-gap: 24px;
+  margin-top: 32px;
+}
+
+.stats-item {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  align-items: flex-end;
+  column-gap: 7px;
+  background-size: 56px;
+  background-repeat: no-repeat;
+}
+
+.stats-item__param {
+  flex-basis: 100%;
+  margin-bottom: 7px;
+}
+
+.stats-item__value {
+  font-size: 24px;
+  line-height: 27px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .stats-list {
+    flex-flow: column;
+    justify-content: initial;
+  }
+
+  .stats-item {
+    background-position: 26px center;
+    padding: 20px 20px 22px 100px;
+    border-radius: 20px;
+  }
+}
+
+
+
+@media screen and (min-width: 481px) {
+  .stats-list {
+    column-gap: 4%;
+  }
+
+  .stats-item {
+    padding: 92px 0 24px;
+    background-position: center 24px;
+    border-radius: 24px;
+  }
+
+  .stats-item__param {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .stats-item_1,
+  .stats-item_2,
+  .stats-item_3,
+  .stats-item_4 {
+    flex-basis: 48%;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .stats-item_5 {
+    flex-basis: 50%;
+    justify-content: center;
+  }
+}
+
+
+
+@media screen and (min-width: 641px) {
+  .stats-list {
+    column-gap: 2%;
+  }
+
+  .stats-item {
+    flex-basis: 32%;
+  }
+}
+
+
+
+@media screen and (min-width: 961px) {
+  .stats-list {
+    column-gap: 1.25%;
+  }
+
+  .stats-item {
+    flex-basis: 19%;
+  }
+}
