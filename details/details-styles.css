@@ -73,11 +73,7 @@
 
 
 
-@media screen and (min-width: 961px) {  
-  .details {
-    padding-top: 48px;
-  }
-
+@media screen and (min-width: 961px) {
   .details-list {
     column-gap: 2%;
   }

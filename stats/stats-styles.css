@@ -29,33 +29,20 @@
 
 
 
-
-
 .stats {
   padding-top: 48px;
 }
 
 .stats-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  row-gap: 24px;
   margin-top: 32px;
+  display: flex;
+  row-gap: 24px;
 }
 
 .stats-item {
   display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  align-items: flex-end;
-  column-gap: 7px;
   background-size: 56px;
   background-repeat: no-repeat;
-}
-
-.stats-item__param {
-  flex-basis: 100%;
-  margin-bottom: 7px;
 }
 
 .stats-item__value {
@@ -68,13 +55,20 @@
 @media screen and (max-width: 480px) {
   .stats-list {
     flex-flow: column;
-    justify-content: initial;
   }
 
   .stats-item {
     background-position: 26px center;
     padding: 20px 20px 22px 100px;
     border-radius: 20px;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    column-gap: 7px;
+  }
+
+  .stats-item__param {
+    flex-basis: 100%;
+    margin-bottom: 7px;
   }
 }
 
@@ -82,32 +76,41 @@
 
 @media screen and (min-width: 481px) {
   .stats-list {
+    flex-flow: row wrap;
+    justify-content: center;
     column-gap: 4%;
   }
 
   .stats-item {
+    flex-basis: 48%;
     padding: 92px 0 24px;
     background-position: center 24px;
     border-radius: 24px;
-  }
-
-  .stats-item__param {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .stats-item_1,
-  .stats-item_2,
-  .stats-item_3,
-  .stats-item_4 {
-    flex-basis: 48%;
     flex-flow: column;
     align-items: center;
   }
 
+  .stats-item__param {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 640px) {
   .stats-item_5 {
-    flex-basis: 50%;
-    justify-content: center;
+    flex-basis: 62%;
+    background-position: 26px center;
+    padding: 20px 20px 22px 100px;
+    border-radius: 20px;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    column-gap: 7px;
+  }
+
+  .stats-item_5 > .stats-item__param {
+    flex-basis: 100%;
+    margin-bottom: 7px;
   }
 }
 
@@ -127,9 +130,10 @@
 
 @media screen and (min-width: 961px) {
   .stats-list {
+    margin-top: 36px;
     column-gap: 1.25%;
   }
-
+  
   .stats-item {
     flex-basis: 19%;
   }

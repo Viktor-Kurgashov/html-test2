@@ -28,10 +28,25 @@ interior.setMaxOffset();
 
 
 
+let reviews = {
+  list: document.getElementsByClassName('reviews-slider__list')[0],
+  movingRight: false,
+  movingLeft: false,
+  step: 50,
+  swipeStart: undefined,
+  setMaxOffset() {
+    this.maxOffset = this.list.parentElement.clientWidth - this.list.scrollWidth;
+  }
+}
+reviews.setMaxOffset();
+
+
+
 window.addEventListener('resize', () => {
-  about.list.style.marginLeft = interior.list.style.marginLeft = '0px';
+  about.list.style.marginLeft = interior.list.style.marginLeft = reviews.list.style.marginLeft = '0px';
   about.setMaxOffset();
   interior.setMaxOffset();
+  reviews.setMaxOffset();
 });
 
 
@@ -73,6 +88,16 @@ document.getElementsByClassName('photos__btn')[1].addEventListener('mouseout', (
 
 
 
+document.getElementsByClassName('reviews-slider__btn')[1].addEventListener(
+  'mouseover', () => {
+    reviews.movingRight = true;
+    moveRight(reviews);
+  });
+
+document.getElementsByClassName('reviews-slider__btn')[1].addEventListener('mouseout', () => reviews.movingRight = false);
+
+
+
 
 
 function moveLeft(obj) {
@@ -110,6 +135,16 @@ document.getElementsByClassName('photos__btn')[0].addEventListener('mouseout', (
 
 
 
+document.getElementsByClassName('reviews-slider__btn')[0].addEventListener(
+  'mouseover', () => {
+    reviews.movingLeft = true;
+    moveLeft(reviews);
+  });
+
+document.getElementsByClassName('reviews-slider__btn')[0].addEventListener('mouseout', () => reviews.movingLeft = false);
+
+
+
 
 
 function swipe (event, obj) {
@@ -136,3 +171,9 @@ about.list.parentElement.addEventListener('touchend', () => swipe(event, about))
 interior.list.parentElement.addEventListener('touchstart', event => interior.swipeStart = event.changedTouches[0].clientX);
 
 interior.list.parentElement.addEventListener('touchend', () => swipe(event, interior));
+
+
+
+reviews.list.parentElement.addEventListener('touchstart', event => reviews.swipeStart = event.changedTouches[0].clientX);
+
+reviews.list.parentElement.addEventListener('touchend', () => swipe(event, reviews));
